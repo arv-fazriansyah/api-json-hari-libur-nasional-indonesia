@@ -1,7 +1,7 @@
-# API JSON Hari Libur Nasional di Indonesia.
+# ★ API JSON Hari Libur Nasional di Indonesia.
 Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Setiap Menit Jika Ada Perubahan Data.
 
-## Format respon
+## ★ Format respon
 ```
 {
   Keterangan: "Hari Kemerdekaan Indonesia",
@@ -9,21 +9,21 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 }
 ```
 
-## Cara Menggunkan API
+## ★ Cara Menggunkan API
 
-`https://www.ssh-net.eu.org/api` => mendapatkan daftar hari libur tahun sekarang
+- `https://www.ssh-net.eu.org/api` => mendapatkan daftar hari libur tahun sekarang
 
-`https://www.ssh-net.eu.org/api?year=2023` => mendapatkan daftar hari libur di tahun 2023
+- `https://www.ssh-net.eu.org/api?year=2023` => mendapatkan daftar hari libur di tahun 2023
 
-Jika mengakses data API dengan isian array kosong maka (`Data tidak tersedia`)!
+- Jika mengakses data API dengan isian array kosong maka (`Data tidak tersedia`)!
 
 
-## Sumber Data
+## ★ Sumber Data
 
-[Google Calender](https://calendar.google.com/calendar/u/0/r)
+- [Google Calender](https://calendar.google.com/calendar/u/0/r)
 
-[API Hari Libur](https://api-harilibur.vercel.app/)
+- [API Hari Libur](https://api-harilibur.vercel.app/)
 
-## Thanks To
+## ★ Thanks To
 
-Github @[kresnasatya](https://github.com/kresnasatya)
+- Github @[kresnasatya](https://github.com/kresnasatya)
