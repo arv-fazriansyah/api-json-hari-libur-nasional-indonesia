@@ -6,7 +6,7 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 - API Kalender Hijriyah
 - API Kalender Jawa
 
-## ★ Format respon
+## ★ Format Respon
 ```
 {
   Keterangan: "Hari Kemerdekaan Indonesia",
