@@ -1,8 +1,9 @@
  // Replace this URL with the URL for your own JSON data
-  var url = "https://script.google.com/macros/s/AKfycbxZNGA4B-BvZimbstK6HyfSJGMU4-Yvl8UCnp_cBnnIDsIsB0srIQUCHp4km_4OzILEEg/exec";
+ // var url = "https://script.google.com/macros/s/AKfycbxZNGA4B-BvZimbstK6HyfSJGMU4-Yvl8UCnp_cBnnIDsIsB0srIQUCHp4km_4OzILEEg/exec";
+var url = "https://api.ssh-net.eu.org/";
 
 
-  var originalData = []; // To store the original data from JSON
+var originalData = []; // To store the original data from JSON
 var filteredData = []; // To store the filtered data
 var pageSize = 10; // The number of rows to display per page
 var currentPage = 0; // The index of the current page
