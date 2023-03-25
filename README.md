@@ -20,9 +20,9 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 ## ★ Cara Menggunkan API
 
-- `https://www.ssh-net.eu.org/api` => mendapatkan daftar hari libur tahun sekarang
+- `https://api.ssh-net.eu.org/api` => mendapatkan daftar hari libur tahun sekarang
 
-- `https://www.ssh-net.eu.org/api?year=2023` => mendapatkan daftar hari libur di tahun 2023
+- `https://api.ssh-net.eu.org/api?year=2023` => mendapatkan daftar hari libur di tahun 2023
 
 - Jika mengakses data API dengan isian array kosong maka (`Data tidak tersedia`)!
 
