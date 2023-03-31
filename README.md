@@ -20,21 +20,21 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 ## ★ Cara Menggunkan API
 
-- `https://api.ssh-net.eu.org/` => mendapatkan daftar hari libur tahun sekarang
+- `https://api.fazriansyah.eu.org/` => mendapatkan daftar hari libur tahun sekarang
 
-- `https://api.ssh-net.eu.org/?year=2023` => mendapatkan daftar hari libur di tahun 2023
+- `https://api.fazriansyah.eu.org/?year=2023` => mendapatkan daftar hari libur di tahun 2023
 
 - Jika mengakses data API dengan isian array kosong maka (`Data tidak tersedia`)!
 
 ## ★ API Calender
 
-- `https://api2.ssh-net.eu.org/` => mendapatkan calender tahun sekarang
+- `https://api2.fazriansyah.eu.org/` => mendapatkan calender tahun sekarang
 
-- `https://api2.ssh-net.eu.org/?year=2023` => mendapatkan calender di tahun 2023
+- `https://api2.fazriansyah.eu.org/?year=2023` => mendapatkan calender di tahun 2023
 
-- `https://api2.ssh-net.eu.org/?month=8` => mendapatkan calender bulan 8 tahun sekarang
+- `https://api2.fazriansyah.eu.org/?month=8` => mendapatkan calender bulan 8 tahun sekarang
 
-- `https://api2.ssh-net.eu.org/?year=2025&month=12` => mendapatkan calender bulan 12 tahun 2025
+- `https://api2.fazriansyah.eu.org/?year=2025&month=12` => mendapatkan calender bulan 12 tahun 2025
 
 ## ★ Sumber Data
 
