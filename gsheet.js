@@ -1,6 +1,6 @@
  // Replace this URL with the URL for your own JSON data
 var url = "https://script.google.com/macros/s/AKfycbxZNGA4B-BvZimbstK6HyfSJGMU4-Yvl8UCnp_cBnnIDsIsB0srIQUCHp4km_4OzILEEg/exec";
-// var url = "https://cors-anywhere.herokuapp.com/https://api.ssh-net.eu.org/";
+// var url = "https://cors-anywhere.herokuapp.com/https://api.fazriansyah.eu.org/";
 
 
 var originalData = []; // To store the original data from JSON
