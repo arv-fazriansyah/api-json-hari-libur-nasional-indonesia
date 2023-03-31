@@ -32,6 +32,10 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 - `https://api2.ssh-net.eu.org/?year=2023` => mendapatkan calender di tahun 2023
 
+- `https://api2.ssh-net.eu.org/?month=8` => mendapatkan calender bulan 8 tahun sekarang
+
+- `https://api2.ssh-net.eu.org/?year=2025&month=12` => mendapatkan calender bulan 12 tahun 2025
+
 ## ★ Sumber Data
 
 - [Google Calender](https://calendar.google.com/calendar/u/0/r)
