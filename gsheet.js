@@ -3,7 +3,6 @@
 var url = "https://cors.fazriansyah.eu.org/?url=https://api.fazriansyah.eu.org/";
 // var url = "https://api.codetabs.com/v1/proxy/?quest=https://api.fazriansyah.eu.org/";
 
-
 var originalData = []; // To store the original data from JSON
 var filteredData = []; // To store the filtered data
 var pageSize = 10; // The number of rows to display per page
