@@ -1,5 +1,5 @@
 # ★ API JSON Hari Libur Nasional di Indonesia.
-Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Setiap Menit Jika Ada Perubahan Data.
+Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Setiap Menit Jika Ada Perubahan Data. API ini dibuat untuk memudahkan guru dalam membuat kalender Pendidikan.
 
 ## ★ Demo Website
 
