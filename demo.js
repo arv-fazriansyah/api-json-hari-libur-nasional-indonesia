@@ -1,88 +1,94 @@
-// Replace this URL with the URL for your own JSON data
-// var url = "https://api.fazriansyah.eu.org/";
- var url = "https://cors.fzrnsyh.workers.dev/https://api.fazriansyah.eu.org/";
-// var url = "https://api.codetabs.com/v1/proxy/?quest=https://api.fazriansyah.eu.org/";
+// Wrap your code in a function to avoid global scope pollution
+function setupTable() {
+  const url = "https://cors.fzrnsyh.workers.dev/https://api.fazriansyah.eu.org/";
+  const originalData = [];
+  let filteredData = [];
+  const pageSize = 10;
+  let currentPage = 0;
+  let startRow = 0;
+  let endRow = pageSize;
 
-var originalData = []; // To store the original data from JSON
-var filteredData = []; // To store the filtered data
-var pageSize = 10; // The number of rows to display per page
-var currentPage = 0; // The index of the current page
-var startRow = 0; // The index of the first row to display
-var endRow = pageSize; // The index of the last row to display
+  // Cache frequently accessed DOM elements
+  const searchInput = document.getElementById("searchInput");
+  const tableHeader = document.getElementById("tableHeader");
+  const tableBody = document.getElementById("tableBody");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-fetch(url)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    originalData = data; // Store the original data for filtering later
-    createTableHeader(); // Create the table header dynamically
-    filterTable(); // Filter the table initially
-  })
-  .catch(function(error) {
-    console.error(error);
-  });
-
-// Function to create the table header dynamically
-function createTableHeader() {
-  var tableHeader = document.getElementById("tableHeader");
-  var headerRow = document.createElement("tr");
-  var keys = Object.keys(originalData[0]);
-  for (var i = 0; i < keys.length; i++) {
-    var cell = document.createElement("th");
-    cell.appendChild(document.createTextNode(keys[i]));
-    headerRow.appendChild(cell);
-  }
-  tableHeader.appendChild(headerRow);
-}
-
-// Function to filter the table based on search input and current page
-function filterTable() {
-  var input = document.getElementById("searchInput").value.toLowerCase();
-  filteredData = originalData.filter(function(obj) {
-    return Object.keys(obj).some(function(key) {
-      return obj[key].toString().toLowerCase().includes(input);
-    });
-  });
-
-  // Update the start and end rows based on the current page
-  startRow = currentPage * pageSize;
-  endRow = Math.min(startRow + pageSize, filteredData.length);
-
-  var tableBody = document.getElementById("tableBody");
-  tableBody.innerHTML = "";
-
-  // Create data rows dynamically for the current page
-  for (var i = startRow; i < endRow; i++) {
-    var row = document.createElement("tr");
-    for (var j = 0; j < Object.keys(filteredData[i]).length; j++) {
-      var key = Object.keys(filteredData[i])[j];
-      var cell = document.createElement("td");
-      cell.appendChild(document.createTextNode(filteredData[i][key]));
-      row.appendChild(cell);
+  // Function to create the table header dynamically
+  function createTableHeader() {
+    const headerRow = document.createElement("tr");
+    const keys = Object.keys(originalData[0]);
+    for (const key of keys) {
+      const cell = document.createElement("th");
+      cell.textContent = key;
+      headerRow.appendChild(cell);
     }
-    tableBody.appendChild(row);
+    tableHeader.appendChild(headerRow);
   }
 
-  // Disable or enable the "Previous" and "Next" buttons based on the current page
-  var prevBtn = document.getElementById("prevBtn");
-  var nextBtn = document.getElementById("nextBtn");
-  prevBtn.disabled = (currentPage === 0);
-  nextBtn.disabled = (endRow >= filteredData.length);
+  // Function to filter the table based on search input and current page
+  function filterTable() {
+    const input = searchInput.value.toLowerCase();
+    filteredData = originalData.filter(function (obj) {
+      return Object.keys(obj).some(function (key) {
+        return obj[key].toString().toLowerCase().includes(input);
+      });
+    });
+
+    startRow = currentPage * pageSize;
+    endRow = Math.min(startRow + pageSize, filteredData.length);
+
+    tableBody.innerHTML = "";
+
+    for (let i = startRow; i < endRow; i++) {
+      const row = document.createElement("tr");
+      for (const key in filteredData[i]) {
+        if (Object.hasOwnProperty.call(filteredData[i], key)) {
+          const cell = document.createElement("td");
+          cell.textContent = filteredData[i][key];
+          row.appendChild(cell);
+        }
+      }
+      tableBody.appendChild(row);
+    }
+
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = endRow >= filteredData.length;
+  }
+
+  function prevPage() {
+    if (currentPage > 0) {
+      currentPage--;
+      filterTable();
+    }
+  }
+
+  function nextPage() {
+    if (endRow < filteredData.length) {
+      currentPage++;
+      filterTable();
+    }
+  }
+
+  // Fetch data and initialize the table
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      originalData.push(...data);
+      createTableHeader();
+      filterTable();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  // Return the functions that need to be accessible from outside
+  return {
+    prevPage,
+    nextPage,
+  };
 }
 
-// Function to go to the previous page
-function prevPage() {
-  if (currentPage > 0) {
-    currentPage--;
-    filterTable();
-  }
-}
-
-// Function to go to the next page
-function nextPage() {
-  if (endRow < filteredData.length) {
-   currentPage++;
-   filterTable();
-  }
-}
+// Call the setupTable function to initialize the table
+const table = setupTable();
