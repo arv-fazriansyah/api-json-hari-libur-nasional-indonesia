@@ -6,12 +6,12 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 - [Demo](https://arv-fazriansyah.github.io/api-json-hari-libur-nasional-indonesia/)
 
 # ★ API Hari Libur Nasional Indonesia
-## ★ Source Code
+## Source Code
 
 - Deploy Code di Worker Cloudflare: [Disini](https://dash.cloudflare.com)
 - Source Code [harilibur.js](https://raw.githubusercontent.com/arv-fazriansyah/api-json-hari-libur-nasional-indonesia/main/harilibur.js)
 
-## ★ Cara Menggunakan API
+## Cara Menggunakan API
 
 - `https://api.fazriansyah.eu.org/` => mendapatkan daftar hari libur tahun sekarang
 
@@ -19,7 +19,7 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 - Jika mengakses data API dengan isian array kosong maka (`Data tidak tersedia`)!
 
-## ★ Format Respon
+## Format Respon
 ```
 {
   Keterangan: "Hari Kemerdekaan Indonesia",
@@ -28,12 +28,12 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 ```
 
 # ★ API Calender Table
-## ★ Source Code
+## Source Code
 
 - Deploy Code di Worker Cloudflare: [Disini](https://dash.cloudflare.com)
-- Source Code [harilibur.js](https://raw.githubusercontent.com/arv-fazriansyah/api-json-hari-libur-nasional-indonesia/main/calendar-table.js)
+- Source Code [calendar-table.js](https://raw.githubusercontent.com/arv-fazriansyah/api-json-hari-libur-nasional-indonesia/main/calendar-table.js)
 
-## ★ Cara Menggunakan API
+## Cara Menggunakan API
 
 - `https://api2.fazriansyah.eu.org/` => mendapatkan calender tahun sekarang
 
@@ -43,12 +43,12 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 - `https://api2.fazriansyah.eu.org/?year=2025&month=12` => mendapatkan calender bulan 12 tahun 2025
 
-## ★ Sumber Data
+# ★ Sumber Data
 
 - [Google Calender](https://calendar.google.com/calendar/u/0/r)
 
 - [API Hari Libur](https://api-harilibur.vercel.app/)
 
-## ★ Thanks To
+# ★ Thanks To
 
 - Github @[kresnasatya](https://github.com/kresnasatya)
