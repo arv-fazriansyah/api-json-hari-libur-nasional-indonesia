@@ -20,7 +20,7 @@ async function handleRequest(request) {
 }
 
 async function fetchHolidays(year) {
-  if (year <= 2021) {
+  if (year <= new Date().getFullYear() - 2) {
     return fetchApiHolidays(year);
   } else {
     return fetchGoogleCalendarHolidays(year);
