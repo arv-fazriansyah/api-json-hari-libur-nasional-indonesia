@@ -43,12 +43,12 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 - `https://api2.fazriansyah.eu.org/?year=2025&month=12` => mendapatkan calender bulan 12 tahun 2025
 
-# ★ Sumber Data
+## ★ Sumber Data
 
 - [Google Calender](https://calendar.google.com/calendar/u/0/r)
 
 - [API Hari Libur](https://api-harilibur.vercel.app/)
 
-# ★ Thanks To
+## ★ Thanks To
 
 - Github @[kresnasatya](https://github.com/kresnasatya)
