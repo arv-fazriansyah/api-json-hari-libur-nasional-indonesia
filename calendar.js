@@ -1,4 +1,4 @@
-addEventListener('fetch', event => {
+addEventListener('fetch', async event => {
   event.respondWith(handleRequest(event.request))
 })
 
@@ -6,10 +6,18 @@ async function handleRequest(request) {
   const { searchParams } = new URL(request.url)
   const year = parseInt(searchParams.get('year')) || new Date().getFullYear()
   const month = parseInt(searchParams.get('month')) || null
-
   const timeZone = 'Asia/Jakarta'
-  const currentDate = new Date().toLocaleString('en-US', { timeZone })
 
+  const html = await generateCalendar(year, month, timeZone)
+
+  return new Response(html, {
+    headers: {
+      'Content-Type': 'text/html',
+    },
+  })
+}
+
+async function generateCalendar(year, month, timeZone) {
   let calendar = ''
 
   for (let i = 0; i < 12; i++) {
@@ -121,9 +129,5 @@ async function handleRequest(request) {
     </html>
   `
 
-  return new Response(html, {
-    headers: {
-      'Content-Type': 'text/html',
-    },
-  })
+  return html
 }
