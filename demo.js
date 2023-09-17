@@ -1,6 +1,6 @@
 // Replace this URL with the URL for your own JSON data
- var url = "https://api.fazriansyah.eu.org/";
-// var url = "https://cors.fzrnsyh.workers.dev/https://api.fazriansyah.eu.org/";
+// var url = "https://api.fazriansyah.eu.org/";
+ var url = "https://cors.fzrnsyh.workers.dev/https://api.fazriansyah.eu.org/";
 // var url = "https://api.codetabs.com/v1/proxy/?quest=https://api.fazriansyah.eu.org/";
 
 var originalData = []; // To store the original data from JSON
