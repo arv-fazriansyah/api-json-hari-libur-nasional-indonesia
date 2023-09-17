@@ -29,7 +29,7 @@ async function fetchHolidays(year) {
 
 async function fetchApiHolidays(year) {
   const url = `https://api-harilibur.vercel.app/api?year=${year}`;
-  const response = await fetch(url);
+  const response = await fetch(url, { method: 'GET' }); // Menggunakan method GET
   const data = await response.json();
 
   return data
@@ -44,7 +44,7 @@ async function fetchGoogleCalendarHolidays(year) {
   const apiKey = 'AIzaSyCw_DVFWHp1fLdzr9plPvy7rqoiIPFWVi0';
   const url = `https://www.googleapis.com/calendar/v3/calendars/id.indonesian%23holiday%40group.v.calendar.google.com/events?key=${apiKey}&timeMin=${year}-01-01T00:00:00Z&timeMax=${year}-12-31T23:59:59Z`;
 
-  const response = await fetch(url);
+  const response = await fetch(url, { method: 'GET' }); // Menggunakan method GET
   const data = await response.json();
 
   const keywords = {
