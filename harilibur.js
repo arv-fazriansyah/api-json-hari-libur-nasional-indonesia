@@ -1,23 +1,21 @@
-// Deploy di worker cloudflare
 addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
+  event.respondWith(handleRequest(event.request));
+});
 
 async function handleRequest(request) {
   const urlParams = new URLSearchParams(request.url.split('?')[1]);
   const year = parseInt(urlParams.get('year')) || new Date().getFullYear();
 
   let holidays = await fetchHolidays(year);
+  holidays = holidays.filter(holiday => holiday.Tanggal);
 
-  // @ts-ignore
-  holidays.sort((a, b) => new Date(a.Tanggal) - new Date(b.Tanggal));
+  // Menggunakan metode localeCompare untuk mengurutkan berdasarkan tanggal
+  holidays.sort((a, b) => a.Tanggal.localeCompare(b.Tanggal));
 
-  const json = JSON.stringify(holidays, null, 2);
-
-  return new Response(json, {
+  return new Response(JSON.stringify(holidays, null, 2), {
     headers: {
-      'content-type': 'application/json;charset=UTF-8'
-    }
+      'content-type': 'application/json;charset=UTF-8',
+    },
   });
 }
 
@@ -38,7 +36,7 @@ async function fetchApiHolidays(year) {
     .filter(holiday => holiday.is_national_holiday)
     .map(holiday => ({
       Keterangan: holiday.holiday_name,
-      Tanggal: holiday.holiday_date
+      Tanggal: holiday.holiday_date,
     }));
 }
 
@@ -49,13 +47,7 @@ async function fetchGoogleCalendarHolidays(year) {
   const response = await fetch(url);
   const data = await response.json();
 
-  const keywords = [
-    'Hari Tahun Baru', 'Kemerdekaan', 'Idul Adha', 'Nyepi', 'Buruh Internasional',
-    'Idul Fitri', 'Pancasila', 'Proklamasi Kemerdekaan', 'Muhammad', 'Isa', 'Imlek',
-    'Waisak', 'Hari Raya Natal', 'Hijriah', 'Cuti', 'Ramadan'
-  ];
-
-  const translation = {
+  const keywords = {
     'Hari Tahun Baru': `Tahun Baru ${year}`,
     'Satu Muharam / Tahun Baru Hijriah': `Tahun Baru Islam ${year - 578} Hijriyah`,
     'Tahun Baru Imlek': `Tahun Baru Imlek ${year + 551}`,
@@ -73,13 +65,13 @@ async function fetchGoogleCalendarHolidays(year) {
     'Idul Adha (Lebaran Haji)': `Hari Raya Idul Adha ${year - 579} Hijriyah`,
     'Hari Proklamasi Kemerdekaan R.I.': 'Proklamasi Kemerdekaan',
     'Hari Raya Natal': 'Natal',
-    'Cuti Bersama Natal (Hari Tinju)': 'Cuti Natal'
+    'Cuti Bersama Natal (Hari Tinju)': 'Cuti Natal',
   };
 
   return data.items
-    .filter(item => keywords.some(keyword => item.summary.includes(keyword)))
+    .filter(item => Object.keys(keywords).some(keyword => item.summary.includes(keyword)))
     .map(item => ({
-      Keterangan: translation[item.summary] || item.summary,
+      Keterangan: keywords[item.summary] || item.summary,
       Tanggal: item.start.dateTime || item.start.date,
     }));
 }
