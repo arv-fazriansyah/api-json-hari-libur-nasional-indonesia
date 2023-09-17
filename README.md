@@ -21,10 +21,10 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 
 ## Format Respon
 ```
-{
+[{
   Keterangan: "Hari Kemerdekaan Indonesia",
   Tanggal: "2023-08-17"
-}
+}]
 ```
 
 # ★ API Calender Table
