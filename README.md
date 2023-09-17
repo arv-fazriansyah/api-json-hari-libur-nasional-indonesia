@@ -10,11 +10,6 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 - Deploy Code di Worker Cloudflare: [Disini](https://dash.cloudflare.com)
 - Source Code [harilibur.js](https://raw.githubusercontent.com/arv-fazriansyah/api-json-hari-libur-nasional-indonesia/main/harilibur.js)
 
-## ★ Coming Soon
-
-- API Kalender Hijriyah
-- API Kalender Jawa
-
 ## ★ Format Respon
 ```
 {
@@ -23,7 +18,7 @@ Free API JSON Hari Libur Nasioanal Sesuai Kalender Indonesia, Otomatis Update Se
 }
 ```
 
-## ★ Cara Menggunkan API
+## ★ Cara Menggunakan API
 
 - `https://api.fazriansyah.eu.org/` => mendapatkan daftar hari libur tahun sekarang
 
