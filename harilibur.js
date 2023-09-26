@@ -12,9 +12,12 @@ async function handleRequest(request) {
   // Menggunakan metode localeCompare untuk mengurutkan berdasarkan tanggal
   holidays.sort((a, b) => a.Tanggal.localeCompare(b.Tanggal));
 
-  return new Response(JSON.stringify(holidays, null, 2), {
+  const jsonResponse = JSON.stringify(holidays, null, 2);
+  
+  return new Response(jsonResponse, {
     headers: {
       'content-type': 'application/json;charset=UTF-8',
+      'Access-Control-Allow-Origin': '*', // Izinkan akses dari semua domain
     },
   });
 }
