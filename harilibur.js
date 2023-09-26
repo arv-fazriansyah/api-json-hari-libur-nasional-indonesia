@@ -66,7 +66,7 @@ async function fetchGoogleCalendarHolidays(year) {
     'Hari Lahir Pancasila': 'Hari Pancasila',
     'Cuti Bersama Waisak': 'Cuti Waisak',
     'Idul Adha (Lebaran Haji)': `Hari Raya Idul Adha ${year - 579} Hijriyah`,
-    'Hari Proklamasi Kemerdekaan R.I.': 'Proklamasi Kemerdekaan',
+    'Hari Proklamasi Kemerdekaan R.I.': `Proklamasi Kemerdekaan Ke-${year - 1945}`,
     'Hari Raya Natal': 'Natal',
     'Cuti Bersama Natal (Hari Tinju)': 'Cuti Natal',
   };
