@@ -41,7 +41,7 @@ async function fetchApiHolidays(year) {
 }
 
 async function fetchGoogleCalendarHolidays(year) {
-  const apiKey = 'AIzaSyCw_DVFWHp1fLdzr9plPvy7rqoiIPFWVi0'; // Your API Key Google Calendar
+  const apiKey = 'AIzaSyCw_DVFWHp1fLdzr9plPvy7rqoiIPFWVi0';
   const url = `https://www.googleapis.com/calendar/v3/calendars/id.indonesian%23holiday%40group.v.calendar.google.com/events?key=${apiKey}&timeMin=${year}-01-01T00:00:00Z&timeMax=${year}-12-31T23:59:59Z`;
 
   const response = await fetch(url, { method: 'GET' }); // Menggunakan method GET
@@ -53,9 +53,12 @@ async function fetchGoogleCalendarHolidays(year) {
     'Tahun Baru Imlek': `Tahun Baru Imlek ${year + 551}`,
     'Hari Raya Waisak': `Hari Raya Waisak ${year + 544}`,
     'Cuti Bersama Tahun Baru Imlek': 'Cuti Imlek',
-    'Isra Mikraj Nabi Muhammad': 'Isra Mikraj',
+    'Isra Mikraj Nabi Muhammad': 'Isra Mikraj Nabi Muhammad',
     'Hari Suci Nyepi (Tahun Baru Saka)': 'Nyepi',
     'Cuti Bersama Hari Suci Nyepi (Tahun Baru Saka)': 'Cuti Nyepi',
+    'Maulid Nabi Muhammad': 'Maulid Nabi Muhammad',
+    'Kenaikan Isa': 'Kenaikan Isa Almasih',
+    'Wafat Isa Almasih': 'Wafat Isa Almasih',
     'Ramadan Start': 'Awal Ramadan',
     'Cuti Bersama Idul Fitri': 'Cuti Idul Fitri',
     'Hari Idul Fitri': `Hari Raya Idul Fitri ${year - 579} Hijriyah`,
